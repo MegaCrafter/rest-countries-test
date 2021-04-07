@@ -123,6 +123,8 @@ export default Vue.extend({
     position: absolute;
     top: 105%;
 
+    z-index: 5;
+
     max-height: 0;
     &.visible {
         max-height: 300px;
