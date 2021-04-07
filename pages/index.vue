@@ -39,7 +39,7 @@ export default Vue.extend({
                 (country) =>
                     country.name
                         .toLowerCase()
-                        .startsWith(this.searchbar.toLowerCase()) &&
+                        .includes(this.searchbar.toLowerCase()) &&
                     (!this.filterby || country.region === this.filterby)
             );
 
