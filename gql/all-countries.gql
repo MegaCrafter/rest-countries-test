@@ -1,0 +1,9 @@
+query AllCountries {
+    allCountries {
+        flag
+        name
+        population
+        region
+        capital
+    }
+}
