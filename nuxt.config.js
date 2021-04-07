@@ -1,6 +1,8 @@
 export default {
+    target: 'static',
+
     head: {
-        title: 'rest-countries-frontend',
+        title: 'Rest Countries Frontend',
         htmlAttrs: {
             lang: 'en',
         },
@@ -10,7 +12,11 @@ export default {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1',
             },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Frontend testing for restcountries.eu',
+            },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -32,10 +38,6 @@ export default {
                     'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap',
             },
         ],
-        /*
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
-        */
     },
 
     css: ['~assets/variables.scss'],
