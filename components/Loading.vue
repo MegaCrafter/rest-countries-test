@@ -14,10 +14,10 @@
 
 .loading-circle {
     background: transparent;
-    border: 5px solid white;
+    border: 5px solid black;
 
     .dark & {
-        border: 5px solid black;
+        border: 5px solid white;
     }
 
     border-left: 5px solid transparent;

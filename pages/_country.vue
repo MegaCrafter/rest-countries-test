@@ -6,7 +6,7 @@
             <CountryInfo v-else :country="country[0]" />
         </div>
 
-        <Footer />
+        <Footer v-if="!loading" />
     </div>
 </template>
 
@@ -33,7 +33,7 @@ export default Vue.extend({
                 '?fullText=true&fields=name;capital;population;flag;region;subregion;nativeName;currencies;topLevelDomain;languages;borders;alpha2Code'
         ).then((res) => res.json());
 
-        this.loading = false;
+        this.loading = true;
     },
 });
 </script>
