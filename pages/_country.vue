@@ -6,7 +6,7 @@
             <CountryInfo v-else :country="country[0]" />
         </div>
 
-        <Footer />
+        <Footer v-if="!loading" />
     </div>
 </template>
 
