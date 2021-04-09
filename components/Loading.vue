@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .loading-wrapper {
-    margin: 50px 100px;
+    padding: 50px 100px;
 
     width: 100%;
     height: 100%;
@@ -18,6 +18,10 @@
 
     .dark & {
         border: 5px solid white;
+
+        border-left: 5px solid transparent;
+        border-top: 5px solid transparent;
+        border-right: 5px solid transparent;
     }
 
     border-left: 5px solid transparent;
