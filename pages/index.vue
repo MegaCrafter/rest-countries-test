@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <main class="wrapper">
         <Filters
             @searchbar-input="searchbarInput"
             @filter-option-changed="filterOptionChanged"
@@ -13,7 +13,7 @@
                 :style="country.placeholder ? 'visibility: hidden' : ''"
             />
         </div>
-    </div>
+    </main>
 </template>
 
 <script lang="ts">
@@ -25,6 +25,7 @@ export default Vue.extend({
         searchbar: '',
         filterby: '',
         countries: [] as Array<RestCountry>,
+        limit: 12,
     }),
 
     async fetch() {
@@ -35,30 +36,59 @@ export default Vue.extend({
 
     computed: {
         filteredCountries() {
-            const filtered = this.countries.filter(
-                (country) =>
-                    country.name
-                        .toLowerCase()
-                        .includes(this.searchbar.toLowerCase()) &&
-                    (!this.filterby || country.region === this.filterby)
-            );
+            let count = 0;
+
+            const filtered = this.countries
+                .filter(
+                    (country) =>
+                        country.name
+                            .toLowerCase()
+                            .includes(this.searchbar.toLowerCase()) &&
+                        (!this.filterby || country.region === this.filterby)
+                )
+                .filter(() => {
+                    if (count < this.limit) {
+                        count++;
+                        return true;
+                    }
+
+                    return false;
+                });
 
             const placeholder = { ...this.countries[0], placeholder: true };
             while (filtered.length < 4) {
-                filtered.push(placeholder);
+                const push = {
+                    ...placeholder,
+                    name: 'placeholder' + filtered.length,
+                };
+                filtered.push(push);
             }
 
             return filtered;
         },
     },
 
+    mounted() {
+        window.onscroll = () => {
+            const bottomOfWindow =
+                document.documentElement.scrollTop + window.innerHeight >=
+                document.documentElement.offsetHeight - 10;
+
+            if (bottomOfWindow) {
+                this.limit += 12;
+            }
+        };
+    },
+
     methods: {
         searchbarInput(e: InputEvent & { target: HTMLInputElement }) {
             this.searchbar = e.target.value || '';
+            this.limit = 12;
         },
 
         filterOptionChanged(option: string) {
             this.filterby = option;
+            this.limit = 12;
         },
     },
 });

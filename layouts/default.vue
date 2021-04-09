@@ -32,13 +32,13 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+
+    user-select: none;
 }
 
 *,
 *::before,
 *::after {
-    user-select: none;
-
     box-sizing: border-box;
     margin: 0;
     padding: 0;
