@@ -36,6 +36,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .country-wrapper {
-    padding: 40px 100px;
+    padding: 40px 15%;
 }
 </style>

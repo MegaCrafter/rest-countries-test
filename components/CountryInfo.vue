@@ -90,8 +90,6 @@ export default Vue.extend({
 .country-info-wrapper {
     display: flex;
     flex-direction: column;
-
-    padding: 0 100px;
 }
 
 .backbtn {
@@ -105,8 +103,10 @@ export default Vue.extend({
 
 .country-info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+
+    column-gap: 70px;
 
     margin-top: 50px;
 }
@@ -173,5 +173,34 @@ export default Vue.extend({
     flex-wrap: wrap;
 
     max-width: 400px;
+}
+
+@media screen and (max-width: 1000px) {
+    .country-info {
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 40px;
+
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .country-flag {
+        width: 95%;
+    }
+
+    .country-info-grid {
+        flex-direction: column;
+
+        row-gap: 50px;
+    }
+
+    .country-name {
+        font-size: 24px;
+    }
 }
 </style>
