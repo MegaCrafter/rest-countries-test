@@ -16,6 +16,10 @@
     background: transparent;
     border: 5px solid white;
 
+    .dark & {
+        border: 5px solid black;
+    }
+
     border-left: 5px solid transparent;
     border-top: 5px solid transparent;
     border-right: 5px solid transparent;
