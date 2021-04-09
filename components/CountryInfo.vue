@@ -1,5 +1,5 @@
 <template>
-    <div class="country-info-wrapper">
+    <article class="country-info-wrapper">
         <IconText
             class="backbtn"
             icon="fa fa-arrow-left"
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </article>
 </template>
 
 <script lang="ts">
@@ -115,6 +115,10 @@ export default Vue.extend({
     margin-bottom: 20px;
 
     word-wrap: break-word;
+
+    user-select: text;
+
+    font-size: 32px;
 }
 
 .country-subinfo {
@@ -122,6 +126,8 @@ export default Vue.extend({
     flex-direction: column;
 
     max-width: 550px;
+
+    user-select: text;
 }
 
 .country-info-grid {

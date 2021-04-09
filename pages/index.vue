@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <main class="wrapper">
         <Filters
             @searchbar-input="searchbarInput"
             @filter-option-changed="filterOptionChanged"
@@ -13,7 +13,7 @@
                 :style="country.placeholder ? 'visibility: hidden' : ''"
             />
         </div>
-    </div>
+    </main>
 </template>
 
 <script lang="ts">

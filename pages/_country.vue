@@ -1,8 +1,12 @@
 <template>
-    <Loading v-if="loading" />
-    <div v-else class="country-wrapper">
-        <CountryNotFound v-if="country[0] === undefined" />
-        <CountryInfo v-else :country="country[0]" />
+    <div class="country-page">
+        <Loading v-if="loading" />
+        <div v-else class="country-wrapper">
+            <CountryNotFound v-if="country[0] === undefined" />
+            <CountryInfo v-else :country="country[0]" />
+        </div>
+
+        <Footer />
     </div>
 </template>
 
@@ -37,5 +41,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .country-wrapper {
     padding: 40px 15%;
+
+    min-height: 90vh;
 }
 </style>

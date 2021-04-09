@@ -1,5 +1,5 @@
 <template>
-    <div class="country-card" @click="countryClicked">
+    <article class="country-card" @click="countryClicked">
         <img
             v-if="!country.placeholder"
             :src="'flags/' + country.alpha2Code.toLowerCase() + '.svg'"
@@ -15,7 +15,7 @@
             <p class="country-subinfo"><b>Region:</b> {{ country.region }}</p>
             <p class="country-subinfo"><b>Capital:</b> {{ country.capital }}</p>
         </div>
-    </div>
+    </article>
 </template>
 
 <script lang="ts">
