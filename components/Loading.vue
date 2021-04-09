@@ -6,6 +6,9 @@
 
 <style lang="scss" scoped>
 .loading-wrapper {
+    display: flex;
+    justify-content: center;
+
     padding: 50px 100px;
 
     width: 100%;
